@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Usuarios | Gestión de Flota</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <button type="button" class="icon-btn menu-btn" id="sidebar-toggle" aria-label="Ocultar panel lateral" aria-expanded="true" aria-controls="sidebar">☰</button>
+      <div class="brand">
+        <div class="brand-logo">F</div>
+        <div>
+          <p class="brand-title">Gestión de flota — demo</p>
+          <p class="brand-role">Usuario</p>
+        </div>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <div class="notif-wrap">
+        <button type="button" class="icon-btn" id="notif-btn" aria-label="Notificaciones" aria-expanded="false" aria-controls="notif-popover">🔔</button>
+        <div class="notif-popover" id="notif-popover" role="dialog" aria-label="Información de notificaciones" hidden>
+          <p class="notif-title">Centro de Notificaciones</p>
+          <p>Este módulo muestra movimientos del sistema según el tipo de usuario.</p>
+        </div>
+      </div>
+      <a href="index.html" class="logout">Salir</a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <h2>Panel</h2>
+      <nav class="menu">
+        <a class="menu-item" href="dashboard.html">Dashboard</a>
+        <a class="menu-item" href="ordenes.html">Órdenes</a>
+        <a class="menu-item" href="inventario.html">Inventario</a>
+        <a class="menu-item is-active" href="usuarios.html">Usuarios</a>
+        <a class="menu-item" href="reportes.html">Reportes</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard">
+      <header class="dashboard-header">
+        <h1>Usuarios</h1>
+        <p>Administración de perfiles, roles y permisos</p>
+        <a class="header-cta" href="nuevo-usuario.html">registrar Nuevo Usuario</a>
+      </header>
+
+      <section class="kpi-grid">
+        <article class="kpi-card kpi-card--soft">
+          <div class="kpi-top">
+            <h2>Total Usuarios</h2>
+            <div class="kpi-icon kpi-icon--blue">👥</div>
+          </div>
+          <p class="kpi-value" id="users-total">0</p>
+          <p class="kpi-meta">Usuarios con acceso activo</p>
+        </article>
+        <article class="kpi-card kpi-card--soft">
+          <div class="kpi-top">
+            <h2>Administradores</h2>
+            <div class="kpi-icon kpi-icon--purple">🛡️</div>
+          </div>
+          <p class="kpi-value" id="users-admin">0</p>
+          <p class="kpi-meta">Control global del sistema</p>
+        </article>
+        <article class="kpi-card kpi-card--soft">
+          <div class="kpi-top">
+            <h2>Supervisores</h2>
+            <div class="kpi-icon kpi-icon--amber">📋</div>
+          </div>
+          <p class="kpi-value" id="users-supervisor">0</p>
+          <p class="kpi-meta">Gestión por área/equipo</p>
+        </article>
+        <article class="kpi-card kpi-card--soft">
+          <div class="kpi-top">
+            <h2>Operadores</h2>
+            <div class="kpi-icon kpi-icon--green">🔧</div>
+          </div>
+          <p class="kpi-value" id="users-operador">0</p>
+          <p class="kpi-meta">Ejecución en taller</p>
+        </article>
+      </section>
+
+      <section class="panel-grid">
+        <article class="panel-card panel-card--wide">
+          <div class="panel-card__head">
+            <h3>Usuarios Activos</h3>
+          </div>
+          <table class="users-table">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Rol</th>
+              </tr>
+            </thead>
+            <tbody id="users-table-body">
+              <!-- lleno desde JS -->
+            </tbody>
+          </table>
+        </article>
+
+        <article class="panel-card panel-card--wide">
+          <div class="panel-card__head">
+            <h3>Actividad de Usuarios</h3>
+          </div>
+          <ul class="activity-list">
+            <li>
+              <span class="activity-dot activity-dot--green"></span>
+              <div>
+                <strong>Nuevo usuario registrado</strong>
+                <span class="activity-meta">Hace 3 minutos · módulo Usuarios</span>
+              </div>
+            </li>
+            <li>
+              <span class="activity-dot activity-dot--blue"></span>
+              <div>
+                <strong>Rol actualizado</strong>
+                <span class="activity-meta">Hace 21 minutos · Supervisor a Administrador</span>
+              </div>
+            </li>
+            <li>
+              <span class="activity-dot activity-dot--purple"></span>
+              <div>
+                <strong>Sesión activa reciente</strong>
+                <span class="activity-meta">Último acceso de Ana García · hoy 10:32</span>
+              </div>
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/dashboard.js" defer></script>
+</body>
+</html>

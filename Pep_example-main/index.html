@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestión de Flota — Iniciar sesión</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <main class="card" aria-labelledby="login-title">
+      <div class="icon-wrap" aria-hidden="true">
+        <div class="icon-circle">
+          <svg class="logo-truck" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path class="pin pin-right" d="M14 28c0-6 5-11 11-11s11 5 11 11c0 8-11 18-11 18s-11-10-11-18Z" stroke="#FFFFFF" stroke-width="2.4"/>
+            <circle class="pin pin-right" cx="25" cy="28" r="4.3" stroke="#FFFFFF" stroke-width="2.4"/>
+
+            <g class="speed-lines" stroke="#8DB9FF" stroke-width="3.2" stroke-linecap="round">
+              <path d="M24 94h30" />
+              <path d="M24 104h20" />
+              <path d="M24 114h12" />
+            </g>
+
+            <g class="truck" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M62 80h34c5 0 8 3 8 8v23H62V80Z" />
+              <path d="M104 89h12l12 15v7h-24V89Z" />
+              <circle cx="79" cy="113" r="8" />
+              <circle cx="117" cy="113" r="8" />
+              <path d="M86 113h24" />
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <h1 id="login-title">Gestión de Flota</h1>
+
+      <form id="login-form" action="dashboard.html" method="get">
+        <div class="field">
+          <label for="email">Correo electrónico</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="admin@pepsico.cl"
+          />
+        </div>
+        <div class="field">
+          <label for="password">Contraseña</label>
+          <div class="password-wrapper">
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              placeholder="admin123"
+            />
+            <button
+              type="button"
+              class="password-toggle"
+              id="password-toggle"
+              aria-label="Mostrar contraseña"
+              aria-pressed="false"
+            >
+              <svg class="icon-eye icon-eye-open" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M2.2 12s3.3-6 9.8-6 9.8 6 9.8 6-3.3 6-9.8 6-9.8-6-9.8-6Z" />
+                <circle cx="12" cy="12" r="3.2" />
+              </svg>
+              <svg class="icon-eye icon-eye-closed" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 3l18 18" />
+                <path d="M4.2 8.2A14.8 14.8 0 0 0 2.2 12s3.3 6 9.8 6a10.6 10.6 0 0 0 3.8-.7" />
+                <path d="M9.3 9.3a3.8 3.8 0 0 0 5.4 5.4" />
+                <path d="M12 6c6.5 0 9.8 6 9.8 6a15.4 15.4 0 0 1-2.7 3.8" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button type="submit" class="btn">Iniciar Sesión</button>
+        <a class="forgot" href="#" id="open-recover-modal">¿Olvidaste tu contraseña?</a>
+      </form>
+    </main>
+  </div>
+
+  <footer class="page-footer">© 2026 — Proyecto de portafolio / académico</footer>
+
+  <div class="recover-modal" id="recover-modal" hidden>
+    <div class="recover-modal__backdrop" data-close-modal aria-hidden="true"></div>
+    <div
+      class="recover-modal__dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="recover-title"
+    >
+      <header class="recover-modal__header">
+        <h2 class="recover-modal__title" id="recover-title">Recuperar contraseña</h2>
+        <button type="button" class="recover-modal__close" data-close-modal aria-label="Cerrar">
+          <span aria-hidden="true">×</span>
+        </button>
+      </header>
+
+      <form class="recover-modal__form" id="recover-form" action="#" method="post">
+        <div class="recover-modal__field">
+          <label for="recover-email">Correo electrónico</label>
+          <input
+            id="recover-email"
+            name="recover-email"
+            type="email"
+            autocomplete="email"
+            placeholder="tu@email.com"
+          />
+        </div>
+
+        <div class="recover-modal__actions">
+          <button type="button" class="btn btn--secondary" data-close-modal>Cancelar</button>
+          <button type="submit" class="btn btn--primary-inline">Enviar instrucciones</button>
+        </div>
+      </form>
+
+      <p class="recover-modal__hint">
+        Si olvidaste tu contraseña, ingresa tu correo registrado.
+        El sistema validará si existe en la base de datos: si no existe, 
+        mostrará un mensaje de “usuario no existe”; si es válido, 
+        enviará un correo de recuperación y mostrará un mensaje de éxito.
+      </p>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Órdenes | Gestión de Flota</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <button type="button" class="icon-btn menu-btn" id="sidebar-toggle" aria-label="Ocultar panel lateral" aria-expanded="true" aria-controls="sidebar">☰</button>
+      <div class="brand">
+        <div class="brand-logo">F</div>
+        <div>
+          <p class="brand-title">Gestión de flota — demo</p>
+          <p class="brand-role">Usuario</p>
+        </div>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <div class="notif-wrap">
+        <button type="button" class="icon-btn" id="notif-btn" aria-label="Notificaciones" aria-expanded="false" aria-controls="notif-popover">🔔</button>
+        <div class="notif-popover" id="notif-popover" role="dialog" aria-label="Información de notificaciones" hidden>
+          <p class="notif-title">Centro de Notificaciones</p>
+          <p>Este módulo muestra movimientos del sistema según el tipo de usuario.</p>
+        </div>
+      </div>
+      <a href="index.html" class="logout">Salir</a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <h2>Panel</h2>
+      <nav class="menu">
+        <a class="menu-item" href="dashboard.html">Dashboard</a>
+        <a class="menu-item is-active" href="ordenes.html">Órdenes</a>
+        <a class="menu-item" href="inventario.html">Inventario</a>
+        <a class="menu-item" href="usuarios.html">Usuarios</a>
+        <a class="menu-item" href="reportes.html">Reportes</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard">
+      <header class="dashboard-header">
+        <h1>Órdenes</h1>
+        <p>Gestión de órdenes de trabajo y mantenimiento</p>
+      </header>
+
+      <section class="kpi-grid">
+        <article class="kpi-card kpi-card--soft">
+          <div class="kpi-top">
+            <h2>Órdenes Activas</h2>
+            <div class="kpi-icon kpi-icon--amber">🛠️</div>
+          </div>
+          <p class="kpi-value">17</p>
+          <p class="kpi-meta">12 preventivas · 5 correctivas</p>
+        </article>
+        <article class="kpi-card kpi-card--soft">
+          <div class="kpi-top">
+            <h2>Críticas</h2>
+            <div class="kpi-icon kpi-icon--purple">🚨</div>
+          </div>
+          <p class="kpi-value">3</p>
+          <p class="kpi-meta">Prioridad alta en curso</p>
+        </article>
+        <article class="kpi-card kpi-card--soft">
+          <div class="kpi-top">
+            <h2>Cerradas Hoy</h2>
+            <div class="kpi-icon kpi-icon--green">✔</div>
+          </div>
+          <p class="kpi-value">9</p>
+          <p class="kpi-meta">Promedio de cierre: 5.4 h</p>
+        </article>
+        <article class="kpi-card kpi-card--soft">
+          <div class="kpi-top">
+            <h2>Backlog Semanal</h2>
+            <div class="kpi-icon kpi-icon--blue">📋</div>
+          </div>
+          <p class="kpi-value">24</p>
+          <p class="kpi-meta">-6 vs semana anterior</p>
+        </article>
+      </section>
+
+      <section class="panel-grid">
+        <article class="panel-card panel-card--wide">
+          <div class="panel-card__head">
+            <h3>Órdenes Abiertas</h3>
+            <span class="badge badge--warning">17 activas</span>
+          </div>
+          <table class="users-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Vehículo</th>
+                <th>Tipo</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>OT-1021</td><td>Camión PE-DF12</td><td>Correctiva</td><td><span class="order-status order-status--diag">En diagnóstico</span></td></tr>
+              <tr><td>OT-1019</td><td>Furgón ZX-TR88</td><td>Preventiva</td><td><span class="order-status order-status--work">En ejecución</span></td></tr>
+              <tr><td>OT-1014</td><td>Camión PE-DF21</td><td>Correctiva</td><td><span class="order-status order-status--wait">Esperando repuesto</span></td></tr>
+              <tr><td>OT-1013</td><td>Camión ZP-LM45</td><td>Correctiva</td><td><span class="order-status order-status--diag">Revisión frenos</span></td></tr>
+              <tr><td>OT-1011</td><td>Camioneta TR-QW10</td><td>Preventiva</td><td><span class="order-status order-status--work">Inspección 10.000 km</span></td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="panel-card panel-card--wide">
+          <div class="panel-card__head">
+            <h3>Historial Reciente</h3>
+          </div>
+          <ul class="activity-list">
+            <li>
+              <span class="activity-dot activity-dot--green"></span>
+              <div>
+                <strong>OT-1008 cerrada correctamente</strong>
+                <span class="activity-meta">Hace 12 min · Técnico: Juan Pérez</span>
+              </div>
+            </li>
+            <li>
+              <span class="activity-dot activity-dot--blue"></span>
+              <div>
+                <strong>OT-1021 reasignada a turno tarde</strong>
+                <span class="activity-meta">Hace 27 min · Supervisor: Luis Pérez</span>
+              </div>
+            </li>
+            <li>
+              <span class="activity-dot activity-dot--purple"></span>
+              <div>
+                <strong>OT-1014 marcada como “esperando repuesto”</strong>
+                <span class="activity-meta">Hace 54 min · Inventario vinculado</span>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="panel-card panel-card--wide">
+          <div class="panel-card__head">
+            <h3>Órdenes Pendientes de Operadores</h3>
+            <span class="badge badge--danger">5 pendientes</span>
+          </div>
+          <table class="users-table">
+            <thead>
+              <tr>
+                <th>Operador</th>
+                <th>Orden</th>
+                <th>Tarea pendiente</th>
+                <th>Detalle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Juan Pérez</td>
+                <td>OT-1021</td>
+                <td>Diagnóstico eléctrico y checklist de seguridad</td>
+                <td><a class="panel-link" href="ordenes.html#ot-1021">Ver detalle</a></td>
+              </tr>
+              <tr>
+                <td>Marta López</td>
+                <td>OT-1014</td>
+                <td>Cambio de filtro de aire y prueba de ruta</td>
+                <td><a class="panel-link" href="ordenes.html#ot-1014">Ver detalle</a></td>
+              </tr>
+              <tr>
+                <td>Carlos Díaz</td>
+                <td>OT-1011</td>
+                <td>Inspección 10.000 km y calibración de frenos</td>
+                <td><a class="panel-link" href="ordenes.html#ot-1011">Ver detalle</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="panel-card panel-card--chart">
+          <div class="panel-card__head">
+            <h3>Tendencia de Cierre (7 días)</h3>
+          </div>
+          <div class="performance-chart">
+            <svg class="performance-svg" viewBox="0 0 600 180" preserveAspectRatio="none" aria-hidden="true">
+              <path class="performance-area" d="M0 138 C80 120, 130 105, 210 114 C280 122, 330 86, 390 94 C450 102, 520 80, 600 92 L600 180 L0 180 Z" />
+              <path class="performance-curve" d="M0 138 C80 120, 130 105, 210 114 C280 122, 330 86, 390 94 C450 102, 520 80, 600 92" />
+            </svg>
+          </div>
+          <div class="performance-footer">
+            <div>
+              <span class="perf-label">Cierres promedio/día</span>
+              <span class="perf-value">6.8</span>
+            </div>
+            <div>
+              <span class="perf-label">Eficiencia semanal</span>
+              <span class="perf-value perf-value--green">+11%</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel-card panel-card--wide">
+          <div class="panel-card__head">
+            <h3>Distribución por Tipo</h3>
+          </div>
+          <div class="stock-alerts">
+            <div class="stock-item">
+              <span>Preventivas</span>
+              <span class="role-badge">12</span>
+            </div>
+            <div class="stock-item">
+              <span>Correctivas</span>
+              <span class="role-badge">5</span>
+            </div>
+            <div class="stock-item">
+              <span>Garantía</span>
+              <span class="role-badge">2</span>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/dashboard.js" defer></script>
+</body>
+</html>

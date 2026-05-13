@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuevo Usuario | Gestión de Flota</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <button type="button" class="icon-btn menu-btn" id="sidebar-toggle" aria-label="Ocultar panel lateral" aria-expanded="true" aria-controls="sidebar">☰</button>
+      <div class="brand">
+        <div class="brand-logo">F</div>
+        <div>
+          <p class="brand-title">Gestión de flota — demo</p>
+          <p class="brand-role">Usuario</p>
+        </div>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <div class="notif-wrap">
+        <button type="button" class="icon-btn" id="notif-btn" aria-label="Notificaciones" aria-expanded="false" aria-controls="notif-popover">🔔</button>
+        <div class="notif-popover" id="notif-popover" role="dialog" aria-label="Información de notificaciones" hidden>
+          <p class="notif-title">Centro de Notificaciones</p>
+          <p>Este módulo muestra movimientos del sistema según el tipo de usuario.</p>
+        </div>
+      </div>
+      <a href="index.html" class="logout">Salir</a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <h2>Panel</h2>
+      <nav class="menu">
+        <a class="menu-item" href="dashboard.html">Dashboard</a>
+        <a class="menu-item" href="ordenes.html">Órdenes</a>
+        <a class="menu-item" href="inventario.html">Inventario</a>
+        <a class="menu-item is-active" href="usuarios.html">Usuarios</a>
+        <a class="menu-item" href="reportes.html">Reportes</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard">
+      <section class="register-card">
+        <div class="register-icon-wrap" aria-hidden="true">
+          <div class="register-icon">👤+</div>
+        </div>
+        <h1 class="register-title">Crear Cuenta</h1>
+        <p class="register-subtitle">Completa el formulario para registrarte</p>
+
+        <form class="register-form" action="#" method="post">
+          <div class="register-grid-2">
+            <div class="register-field">
+              <label for="nombre">Nombre</label>
+              <div class="input-with-icon">
+                <span class="input-icon">👤</span>
+                <input id="nombre" name="nombre" type="text" placeholder="Juan" />
+              </div>
+            </div>
+
+            <div class="register-field">
+              <label for="apellido">Apellido</label>
+              <input id="apellido" name="apellido" type="text" placeholder="Pérez" />
+            </div>
+          </div>
+
+          <div class="register-field">
+            <label for="email-reg">Email</label>
+            <div class="input-with-icon">
+              <span class="input-icon">✉</span>
+              <input id="email-reg" name="email" type="email" placeholder="juan@pepsico.cl" />
+            </div>
+          </div>
+
+          <div class="register-field">
+            <label for="telefono">Teléfono</label>
+            <div class="input-with-icon">
+              <span class="input-icon">📞</span>
+              <input id="telefono" name="telefono" type="tel" placeholder="+56 9 XXXXXXXX" />
+            </div>
+          </div>
+
+          <div class="register-field">
+            <label for="rol">Rol del usuario</label>
+            <select id="rol" name="rol" required>
+              <option value="" selected disabled>Selecciona un rol</option>
+              <option value="administrador">Administrador</option>
+              <option value="supervisor">Supervisor</option>
+              <option value="operador">Operador</option>
+            </select>
+          </div>
+
+          <div class="register-field">
+            <label for="pass-reg">Contraseña</label>
+            <div class="input-with-icon">
+              <span class="input-icon">🔒</span>
+              <input id="pass-reg" name="password" type="password" placeholder="••••••••" />
+            </div>
+          </div>
+
+          <div class="register-field">
+            <label for="pass-confirm">Confirmar Contraseña</label>
+            <div class="input-with-icon">
+              <span class="input-icon">🔒</span>
+              <input id="pass-confirm" name="password_confirm" type="password" placeholder="••••••••" />
+            </div>
+          </div>
+
+
+          <button type="submit" class="register-submit">Crear Cuenta</button>
+        </form>
+      </section>
+    </main>
+  </div>
+  <script src="js/dashboard.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de Administrador</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <button
+        type="button"
+        class="icon-btn menu-btn"
+        id="sidebar-toggle"
+        aria-label="Ocultar panel lateral"
+        aria-expanded="true"
+        aria-controls="sidebar"
+      >
+        ☰
+      </button>
+      <div class="brand">
+      <div class="brand-logo">F</div>
+      <div>
+        <p class="brand-title">Gestión de flota — demo</p>
+        <p class="brand-role">Usuario</p>
+      </div>
+    </div>
+    </div>
+    <div class="topbar-actions">
+      <div class="notif-wrap">
+        <button
+          type="button"
+          class="icon-btn"
+          id="notif-btn"
+          aria-label="Notificaciones"
+          aria-expanded="false"
+          aria-controls="notif-popover"
+        >
+          🔔
+        </button>
+        <div class="notif-popover" id="notif-popover" role="dialog" aria-label="Información de notificaciones" hidden>
+          <p class="notif-title">Centro de Notificaciones</p>
+          <p>
+            Este módulo muestra los movimientos realizados dentro del sistema (creación, edición,
+            aprobaciones y cierres), filtrados según el tipo de usuario.
+          </p>
+          <ul>
+            <li><strong>Administrador:</strong> ve todos los movimientos del sistema.</li>
+            <li><strong>Supervisor:</strong> ve movimientos de su equipo y área asignada.</li>
+            <li><strong>Operador:</strong> ve solo movimientos relacionados a sus tareas.</li>
+          </ul>
+        </div>
+      </div>
+      <a href="index.html" class="logout">Salir</a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <h2>Panel</h2>
+      <nav class="menu">
+        <a class="menu-item is-active" href="dashboard.html">Dashboard</a>
+        <a class="menu-item" href="ordenes.html">Órdenes</a>
+        <a class="menu-item" href="inventario.html">Inventario</a>
+        <a class="menu-item" href="usuarios.html">Usuarios</a>
+        <a class="menu-item" href="reportes.html">Reportes</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard">
+      <header class="dashboard-header">
+        <h1>Panel de Administrador</h1>
+        <p>Vista general del sistema</p>
+      </header>
+
+      <section class="kpi-grid">
+        <article class="kpi-card kpi-card--soft">
+          <div class="kpi-top">
+            <h2>Total Vehículos</h2>
+            <div class="kpi-icon kpi-icon--blue">🚚</div>
+          </div>
+          <p class="kpi-value">48</p>
+          <p class="kpi-meta">42 operativos · 6 en taller</p>
+        </article>
+
+        <article class="kpi-card kpi-card--soft kpi-card--accent">
+          <div class="kpi-top">
+            <h2>Órdenes Activas</h2>
+            <div class="kpi-icon kpi-icon--amber">🛠️</div>
+          </div>
+          <p class="kpi-value">17</p>
+          <p class="kpi-meta">12 preventivas · 5 correctivas</p>
+        </article>
+
+        <article class="kpi-card kpi-card--soft">
+          <div class="kpi-top">
+            <h2>En Taller</h2>
+            <div class="kpi-icon kpi-icon--green">📉</div>
+          </div>
+          <p class="kpi-value">6</p>
+          <p class="kpi-meta">3 en diagnóstico · 3 en reparación</p>
+        </article>
+
+        <article class="kpi-card kpi-card--soft">
+          <div class="kpi-top">
+            <h2>Completadas Hoy</h2>
+            <div class="kpi-icon kpi-icon--purple">✔</div>
+          </div>
+          <p class="kpi-value">9</p>
+          <p class="kpi-meta">75% respecto al promedio diario</p>
+        </article>
+      </section>
+
+      <section class="panel-grid">
+        <article class="panel-card panel-card--wide">
+          <div class="panel-card__head">
+            <h3>Órdenes Urgentes</h3>
+            <span class="badge badge--danger">3 críticas</span>
+          </div>
+          <div class="urgent-list">
+            <div class="urgent-item urgent-item--red">
+              <span class="urgent-icon">⚠</span>
+              <span>2 vehículos fuera de servicio por falla de motor.</span>
+            </div>
+            <div class="urgent-item urgent-item--amber">
+              <span class="urgent-icon">⚠</span>
+              <span>1 vehículo con alerta en sistema de frenos.</span>
+            </div>
+          </div>
+          <a href="ordenes.html" class="panel-link">Ver todas las órdenes →</a>
+        </article>
+
+        <article class="panel-card panel-card--wide">
+          <div class="panel-card__head">
+            <h3>Actividad Reciente</h3>
+          </div>
+          <ul class="activity-list">
+            <li>
+              <span class="activity-dot activity-dot--green"></span>
+              <div>
+                <strong>Orden cerrada hace 12 minutos</strong>
+                <span class="activity-meta">Mecánico: Juan Pérez</span>
+              </div>
+            </li>
+            <li>
+              <span class="activity-dot activity-dot--blue"></span>
+              <div>
+                <strong>Nueva orden asignada</strong>
+                <span class="activity-meta">Hace 28 minutos</span>
+              </div>
+            </li>
+            <li>
+              <span class="activity-dot activity-dot--purple"></span>
+              <div>
+                <strong>Vehículo ingresado al taller</strong>
+                <span class="activity-meta">Hace 1 hora</span>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="panel-card panel-card--chart">
+          <div class="panel-card__head">
+            <h3>Rendimiento del Equipo</h3>
+          </div>
+          <div class="performance-chart">
+            <svg class="performance-svg" viewBox="0 0 600 180" preserveAspectRatio="none" aria-hidden="true">
+              <path
+                class="performance-area"
+                d="M0 120 C60 112, 120 108, 180 100 C240 92, 300 110, 360 96 C420 82, 470 140, 520 132 C560 126, 585 124, 600 122 L600 180 L0 180 Z"
+              />
+              <path
+                class="performance-curve"
+                d="M0 120 C60 112, 120 108, 180 100 C240 92, 300 110, 360 96 C420 82, 470 140, 520 132 C560 126, 585 124, 600 122"
+              />
+            </svg>
+          </div>
+          <div class="performance-footer">
+            <div>
+              <span class="perf-label">Tiempo promedio</span>
+              <span class="perf-value">5.4 horas</span>
+            </div>
+            <div>
+              <span class="perf-label">SLA cumplido</span>
+              <span class="perf-value perf-value--green">92%</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel-card panel-card--wide">
+          <div class="panel-card__head">
+            <h3>Alertas de Stock</h3>
+            <span class="badge badge--warning">4 ítems</span>
+          </div>
+          <div class="stock-alerts">
+            <div class="stock-item">
+              <span>Pastillas de freno</span>
+              <span class="stock-tag">Bajo stock</span>
+            </div>
+            <div class="stock-item">
+              <span>Filtros de aceite</span>
+              <span class="stock-tag">Bajo stock</span>
+            </div>
+            <div class="stock-item">
+              <span>Neumáticos tipo A</span>
+              <span class="stock-tag">Bajo stock</span>
+            </div>
+          </div>
+          <a href="inventario.html" class="panel-link">Ver inventario completo →</a>
+        </article>
+      </section>
+
+      <section class="quick-actions">
+      <h3>Acciones Rápidas</h3>
+      <div class="quick-actions__grid">
+        <a class="action-btn" href="nuevo-usuario.html">
+          <span class="action-icon">+</span>
+          <span>Nuevo Usuario</span>
+        </a>
+        <a class="action-btn" href="registrar-vehiculo.html">
+          <span class="action-icon">🚚</span>
+          <span>Registrar Vehículo</span>
+        </a>
+        <a class="action-btn" href="nuevo-ingreso.html">
+          <span class="action-icon">📄</span>
+          <span>Nuevo Ingreso</span>
+        </a>
+        <a class="action-btn" href="registrar-salida.html">
+          <span class="action-icon">✔</span>
+          <span>Registrar Salida</span>
+        </a>
+      </div>
+      </section>
+    </main>
+  </div>
+  <script src="js/dashboard.js" defer></script>
+</body>
+</html>

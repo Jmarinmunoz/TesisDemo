@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuevo Ingreso | Gestión de Flota</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <button type="button" class="icon-btn menu-btn" id="sidebar-toggle" aria-label="Ocultar panel lateral" aria-expanded="true" aria-controls="sidebar">☰</button>
+      <div class="brand">
+        <div class="brand-logo">F</div>
+        <div>
+          <p class="brand-title">Gestión de flota — demo</p>
+          <p class="brand-role">Usuario</p>
+        </div>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <div class="notif-wrap">
+        <button type="button" class="icon-btn" id="notif-btn" aria-label="Notificaciones" aria-expanded="false" aria-controls="notif-popover">🔔</button>
+        <div class="notif-popover" id="notif-popover" role="dialog" aria-label="Información de notificaciones" hidden>
+          <p class="notif-title">Centro de Notificaciones</p>
+          <p>Este módulo muestra movimientos del sistema según el tipo de usuario.</p>
+        </div>
+      </div>
+      <a href="index.html" class="logout">Salir</a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <h2>Panel</h2>
+      <nav class="menu">
+        <a class="menu-item" href="dashboard.html">Dashboard</a>
+        <a class="menu-item is-active" href="ordenes.html">Órdenes</a>
+        <a class="menu-item" href="inventario.html">Inventario</a>
+        <a class="menu-item" href="usuarios.html">Usuarios</a>
+        <a class="menu-item" href="reportes.html">Reportes</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard">
+      <header class="dashboard-header">
+        <h1>Nuevo Ingreso</h1>
+        <p>Registro de nuevos ingresos al sistema operativo</p>
+      </header>
+      <section class="panel-grid">
+        <article class="panel-card">
+          <div class="panel-card__head"><h3>Ingreso</h3></div>
+          <table class="users-table">
+            <tbody>
+              <tr><th>Fecha</th><td>07‑05‑2026 09:32</td></tr>
+              <tr><th>Tipo</th><td>Ingreso de vehículo a taller</td></tr>
+              <tr><th>Vehículo</th><td>Camión PE-DF21</td></tr>
+              <tr><th>Motivo</th><td>Fuga de aceite en caja de cambios</td></tr>
+              <tr><th>Responsable</th><td>Supervisor: Luis Pérez</td></tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+    </main>
+  </div>
+  <script src="js/dashboard.js" defer></script>
+</body>
+</html>

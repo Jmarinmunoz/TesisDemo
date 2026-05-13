@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventario | Gestión de Flota</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <button type="button" class="icon-btn menu-btn" id="sidebar-toggle" aria-label="Ocultar panel lateral" aria-expanded="true" aria-controls="sidebar">☰</button>
+      <div class="brand">
+        <div class="brand-logo">F</div>
+        <div>
+          <p class="brand-title">Gestión de flota — demo</p>
+          <p class="brand-role">Usuario</p>
+        </div>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <div class="notif-wrap">
+        <button type="button" class="icon-btn" id="notif-btn" aria-label="Notificaciones" aria-expanded="false" aria-controls="notif-popover">🔔</button>
+        <div class="notif-popover" id="notif-popover" role="dialog" aria-label="Información de notificaciones" hidden>
+          <p class="notif-title">Centro de Notificaciones</p>
+          <p>Este módulo muestra movimientos del sistema según el tipo de usuario.</p>
+        </div>
+      </div>
+      <a href="index.html" class="logout">Salir</a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <h2>Panel</h2>
+      <nav class="menu">
+        <a class="menu-item" href="dashboard.html">Dashboard</a>
+        <a class="menu-item" href="ordenes.html">Órdenes</a>
+        <a class="menu-item is-active" href="inventario.html">Inventario</a>
+        <a class="menu-item" href="usuarios.html">Usuarios</a>
+        <a class="menu-item" href="reportes.html">Reportes</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard">
+      <header class="dashboard-header">
+        <h1>Inventario</h1>
+        <p>Control de repuestos, stock y movimientos</p>
+      </header>
+
+      <section class="kpi-grid">
+        <article class="kpi-card kpi-card--soft">
+          <div class="kpi-top">
+            <h2>Ítems Totales</h2>
+            <div class="kpi-icon kpi-icon--blue">📦</div>
+          </div>
+          <p class="kpi-value">326</p>
+          <p class="kpi-meta">18 categorías activas</p>
+        </article>
+        <article class="kpi-card kpi-card--soft">
+          <div class="kpi-top">
+            <h2>Bajo Stock</h2>
+            <div class="kpi-icon kpi-icon--amber">⚠</div>
+          </div>
+          <p class="kpi-value">7</p>
+          <p class="kpi-meta">4 críticos · 3 preventivos</p>
+        </article>
+        <article class="kpi-card kpi-card--soft">
+          <div class="kpi-top">
+            <h2>Ingresos Semana</h2>
+            <div class="kpi-icon kpi-icon--green">⬇</div>
+          </div>
+          <p class="kpi-value">54</p>
+          <p class="kpi-meta">+12% vs semana anterior</p>
+        </article>
+        <article class="kpi-card kpi-card--soft">
+          <div class="kpi-top">
+            <h2>Salidas Semana</h2>
+            <div class="kpi-icon kpi-icon--purple">⬆</div>
+          </div>
+          <p class="kpi-value">41</p>
+          <p class="kpi-meta">Principal destino: Taller central</p>
+        </article>
+      </section>
+
+      <section class="panel-grid">
+        <article class="panel-card">
+          <div class="panel-card__head">
+            <h3>Stock General</h3>
+          </div>
+          <table class="users-table">
+            <thead>
+              <tr>
+                <th>Repuesto</th>
+                <th>Stock</th>
+                <th>Mínimo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Pastillas de freno</td><td>12</td><td>20</td></tr>
+              <tr><td>Filtro de aceite</td><td>35</td><td>25</td></tr>
+              <tr><td>Neumático 275/70 R22.5</td><td>6</td><td>8</td></tr>
+            </tbody>
+          </table>
+        </article>
+        <article class="panel-card">
+          <div class="panel-card__head">
+            <h3>Últimos Movimientos</h3>
+          </div>
+          <table class="users-table">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Movimiento</th>
+                <th>Cantidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>07-05 09:15</td><td>Ingreso filtros de aceite</td><td>+10</td></tr>
+              <tr><td>07-05 10:40</td><td>Salida neumático tipo A</td><td>-4</td></tr>
+              <tr><td>07-05 11:20</td><td>Ingreso pastillas de freno</td><td>+16</td></tr>
+              <tr><td>07-05 12:05</td><td>Salida líquido hidráulico</td><td>-6</td></tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/dashboard.js" defer></script>
+</body>
+</html>

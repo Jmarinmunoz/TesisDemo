@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reportes | Gestión de Flota</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <button type="button" class="icon-btn menu-btn" id="sidebar-toggle" aria-label="Ocultar panel lateral" aria-expanded="true" aria-controls="sidebar">☰</button>
+      <div class="brand">
+        <div class="brand-logo">F</div>
+        <div>
+          <p class="brand-title">Gestión de flota — demo</p>
+          <p class="brand-role">Usuario</p>
+        </div>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <div class="notif-wrap">
+        <button type="button" class="icon-btn" id="notif-btn" aria-label="Notificaciones" aria-expanded="false" aria-controls="notif-popover">🔔</button>
+        <div class="notif-popover" id="notif-popover" role="dialog" aria-label="Información de notificaciones" hidden>
+          <p class="notif-title">Centro de Notificaciones</p>
+          <p>Este módulo muestra movimientos del sistema según el tipo de usuario.</p>
+        </div>
+      </div>
+      <a href="index.html" class="logout">Salir</a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <h2>Panel</h2>
+      <nav class="menu">
+        <a class="menu-item" href="dashboard.html">Dashboard</a>
+        <a class="menu-item" href="ordenes.html">Órdenes</a>
+        <a class="menu-item" href="inventario.html">Inventario</a>
+        <a class="menu-item" href="usuarios.html">Usuarios</a>
+        <a class="menu-item is-active" href="reportes.html">Reportes</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard">
+      <header class="dashboard-header">
+        <h1>Reportes</h1>
+        <p>Indicadores y métricas operativas del sistema</p>
+        <div class="report-actions">
+          <div class="report-btn-wrap">
+            <button
+              type="button"
+              class="header-cta report-btn"
+              data-export-action="excel"
+            >
+              Exportar a Excel
+            </button>
+          </div>
+          <div class="report-btn-wrap">
+            <button
+              type="button"
+              class="header-cta report-btn report-btn--pdf"
+              data-export-action="pdf"
+            >
+              Exportar a PDF
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <section class="kpi-grid">
+        <article class="kpi-card kpi-card--soft">
+          <div class="kpi-top">
+            <h2>Órdenes Cerradas</h2>
+            <div class="kpi-icon kpi-icon--green">✔</div>
+          </div>
+          <p class="kpi-value">186</p>
+          <p class="kpi-meta">Mes actual</p>
+        </article>
+        <article class="kpi-card kpi-card--soft">
+          <div class="kpi-top">
+            <h2>Disponibilidad Flota</h2>
+            <div class="kpi-icon kpi-icon--blue">🚚</div>
+          </div>
+          <p class="kpi-value">93%</p>
+          <p class="kpi-meta">Promedio mensual</p>
+        </article>
+        <article class="kpi-card kpi-card--soft">
+          <div class="kpi-top">
+            <h2>Tiempo Promedio</h2>
+            <div class="kpi-icon kpi-icon--amber">⏱</div>
+          </div>
+          <p class="kpi-value">6.1h</p>
+          <p class="kpi-meta">Por orden correctiva</p>
+        </article>
+        <article class="kpi-card kpi-card--soft">
+          <div class="kpi-top">
+            <h2>Cumplimiento SLA</h2>
+            <div class="kpi-icon kpi-icon--purple">📈</div>
+          </div>
+          <p class="kpi-value">92%</p>
+          <p class="kpi-meta">Meta: 90%</p>
+        </article>
+      </section>
+
+      <section class="panel-grid">
+        <article class="panel-card panel-card--chart">
+          <div class="panel-card__head">
+            <h3>Reporte Mensual</h3>
+          </div>
+          <div class="performance-chart">
+            <svg class="performance-svg" viewBox="0 0 600 180" preserveAspectRatio="none" aria-hidden="true">
+              <path class="performance-area" d="M0 130 C80 115, 140 100, 210 105 C280 110, 320 90, 390 85 C460 80, 520 115, 600 95 L600 180 L0 180 Z" />
+              <path class="performance-curve" d="M0 130 C80 115, 140 100, 210 105 C280 110, 320 90, 390 85 C460 80, 520 115, 600 95" />
+            </svg>
+          </div>
+          <div class="performance-footer">
+            <div>
+              <span class="perf-label">Costo medio OT</span>
+              <span class="perf-value">$ 186.500</span>
+            </div>
+            <div>
+              <span class="perf-label">Tendencia</span>
+              <span class="perf-value perf-value--green">+8.2%</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel-card panel-card--wide">
+          <div class="panel-card__head">
+            <h3>Top Técnicos del Mes</h3>
+          </div>
+          <table class="users-table">
+            <thead>
+              <tr>
+                <th>Técnico</th>
+                <th>OT cerradas</th>
+                <th>Eficiencia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Juan Pérez</td><td>32</td><td>96%</td></tr>
+              <tr><td>Marta López</td><td>28</td><td>93%</td></tr>
+              <tr><td>Carlos Díaz</td><td>24</td><td>91%</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="panel-card panel-card--wide">
+          <div class="panel-card__head">
+            <h3>Exportaciones</h3>
+            <span class="badge badge--warning">5 archivos</span>
+          </div>
+          <div class="report-files">
+            <div class="report-file-item">
+              <span>Reporte_Mensual_Abril.xlsx</span>
+              <span class="activity-meta">Hace 2 días · Ana García</span>
+            </div>
+            <div class="report-file-item">
+              <span>Indicadores_SLA_Semana18.csv</span>
+              <span class="activity-meta">Hace 3 días · Luis Pérez</span>
+            </div>
+            <div class="report-file-item">
+              <span>Flota_Disponibilidad_Q2.pdf</span>
+              <span class="activity-meta">Hace 5 días · Ana García</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel-card panel-card--wide">
+          <div class="panel-card__head">
+            <h3>Resumen Ejecutivo</h3>
+          </div>
+          <p class="report-summary">
+            La flota mantiene un rendimiento estable con mejora de 8.2% respecto al mes anterior.
+            El principal foco de costos sigue siendo el sistema de frenos y neumáticos en rutas urbanas.
+            Se recomienda reforzar mantenimiento preventivo en unidades con más de 120.000 km.
+          </p>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/dashboard.js" defer></script>
+</body>
+</html>
