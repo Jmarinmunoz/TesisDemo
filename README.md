@@ -10,6 +10,8 @@ Proyecto front-end estático (HTML, CSS y JavaScript) para una demo de gestión 
 
 🔗 **[Ver Demo](https://pep-example.vercel.app)**
 
+---
+
 ## Estructura del proyecto
 
 ```text
@@ -32,6 +34,8 @@ pep/
 └── registrar-salida.html
 ```
 
+---
+
 ## Cómo ejecutar
 
 Como es un sitio estático, puedes abrir `index.html` directamente o usar un servidor local.
@@ -42,6 +46,8 @@ Ejemplo con VS Code + Live Server:
 2. Click derecho en `index.html`.
 3. Seleccionar **Open with Live Server**.
 
+---
+
 ## Flujo de uso demo
 
 1. Entrar desde `index.html`.
@@ -51,10 +57,13 @@ Ejemplo con VS Code + Live Server:
    - Operador (Mecánico)
 3. La navegación y acciones visibles cambian según el rol.
 
+---
+
 ## Nota
 
 Los datos de usuarios demo se guardan en el navegador mediante `localStorage`. No hay backend real.
 
+---
 
 ## Autor
 
