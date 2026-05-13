@@ -8,6 +8,8 @@ Proyecto front-end estático (HTML, CSS y JavaScript) para una demo de gestión 
 - Formularios rápidos (nuevo usuario, vehículo, ingreso y salida).
 - Persistencia demo con `localStorage`.
 
+🔗 **[Ver Demo](https://pep-example.vercel.app)**
+
 ## Estructura del proyecto
 
 ```text
