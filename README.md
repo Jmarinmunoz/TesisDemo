@@ -54,3 +54,12 @@ Ejemplo con VS Code + Live Server:
 ## Nota
 
 Los datos de usuarios demo se guardan en el navegador mediante `localStorage`. No hay backend real.
+
+
+## Autor
+
+**Joaquín Marín Muñoz** — Ingeniero en Informática · Fullstack Developer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-joaquin--marin--munoz-blue?logo=linkedin)](https://www.linkedin.com/in/joaquin-marin-munoz/)
+[![GitHub](https://img.shields.io/badge/GitHub-Jmarinmunoz-black?logo=github)](https://github.com/Jmarinmunoz)
+
