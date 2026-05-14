@@ -67,7 +67,7 @@ Los datos de usuarios demo se guardan en el navegador mediante `localStorage`. N
 
 ## Autores
 
-**Joaquín Marín ** — Ingeniero en Informática 
+**Joaquín Marín** — Ingeniero en Informática 
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-joaquin--marin--munoz-blue?logo=linkedin)](https://www.linkedin.com/in/joaquin-marin-munoz/)
 [![GitHub](https://img.shields.io/badge/GitHub-Jmarinmunoz-black?logo=github)](https://github.com/Jmarinmunoz)
