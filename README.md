@@ -65,7 +65,7 @@ Los datos de usuarios demo se guardan en el navegador mediante `localStorage`. N
 
 ---
 
-## Autor
+## Autores
 
 **Joaquín Marín ** — Ingeniero en Informática 
 
